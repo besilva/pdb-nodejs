@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div><a href="/medico/cadastro">Add novo medico</a></div>
+    <h1>Lista de Medicos</h1>
+    <table>
+        <td>Id</td>
+        <td>Nome</td>
+        <td>Especialidade</td>
+        <td>CRM</td>
+        <%for(i =0; i< lista.length; i++){ %>
+            <tr>
+                <td><%= lista[i].id %></td>
+                <td><%= lista[i].nome %></td>
+                <td> <%= lista[i].especialidade %></td>
+                <td><%= lista[i].crm %></td>
+                <td><a href='medico/editar/<%= lista[i].id%>'>Editar</a></td>
+                <td><a href='medico/deletar/<%= lista[i].id%>'>Deletar</a></td>
+            </tr>
+        <%}%>
+    </table>
+</body>
+</html>
